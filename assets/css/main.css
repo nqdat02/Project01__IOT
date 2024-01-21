@@ -80,6 +80,7 @@ main {
 .base-item__content p {
     font-size: 30px;
     font-weight: 500;
+    width: 100px;
 }
 
 
@@ -150,11 +151,11 @@ main {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #f53037;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #f53037;
 }
 
 input:checked+.slider:before {
