@@ -1,53 +1,16 @@
-:root {
-    --base-color: #DB4040;
-    --text-color: rgb(255, 255, 255);
-    --text-color-2: #141414;
-}
-
-* {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    font-family: 'Neurial Grotesk', sans-serif;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0 auto;
-    padding: auto;
-    /* max-width: 1440px; */
-}
-
-p {
-    font-size: 1rem;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-main {
-    width: 100%;
-    overflow: hidden;
-}
-
 .container {
     width: 100%;
     text-align: center;
 }
 
+.container h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .first-row {
-    margin-top: 50px;
     width: 100%;
 }
 
@@ -55,7 +18,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 50px;
 }
 
 .base-item h3 {
@@ -67,7 +30,7 @@ main {
     background-color: rgb(227, 233, 240);
     border: #141414 solid 1px;
     height: 120px;
-    width: 440px;
+    width: 400px;
 }
 
 .base-item__content {
@@ -92,19 +55,22 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 }
 
 .list-btn{
+    height: 400px;
     width: 230px;
-    height: 100%;
 }
 
 .group-btn{
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
+    background-color: rgb(227, 233, 240);
+    padding: 10px;
 }
 
 .group-btn p{
@@ -186,7 +152,7 @@ input:checked+.slider:before {
 }
 
 footer{
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,7 +161,7 @@ footer{
 footer p{
     font-size: 20px;
     font-weight: 400;
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
 }

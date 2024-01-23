@@ -5,17 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <title>DASHBOARD
-    </title>
+    <title>DASHBOARD</title>
 </head>
 
 <body>
     <header>
-        <img src="" alt="">
+        <ul id="navbar" class="navbar">
+            <li class="navbar__item isactive">
+                <!-- <img src="assets/images/icons/dashboard.png" alt=""> -->
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="navbar__item">
+                <!-- <img src="assets/images/icons/search-interface-symbol.png" alt=""> -->
+                <a href="datasensors.html">Data Sensors</a>
+            </li>
+            <li class="navbar__item">
+                <!-- <img src="assets/images/icons/history.png" alt=""> -->
+                <a href="history.html">History</a>
+            </li>
+            <li class="navbar__item">
+                <!-- <img src="assets/images/icons/user.png" alt=""> -->
+                <a href="profile.html">Profile</a>
+
+            </li>
+        </ul>
     </header>
     <div id="container" class="container">
-        <h1>SMART HOME - B20DCPT053 - Nguyen Quoc Dat</h1>
+        <h2>SMART HOME - B20DCPT053 - Nguyen Quoc Dat</h2>
         
         <div class="first-row">
             <div class="first-row__items">
@@ -45,7 +63,7 @@
 
         <div class="second-row">
             <div class="main-graph">
-                <canvas id="myChart" style="width: 1200px; height: 400px;">
+                <canvas id="myChart" style="width: 1000px; height: 400px;">
                 </canvas>
 
                 <p id="currentValue"></p>
@@ -83,6 +101,7 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbarActive.js"></script>
 </body>
 
 </html>

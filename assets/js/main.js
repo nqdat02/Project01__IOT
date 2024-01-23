@@ -141,7 +141,7 @@ const config = {
 
 var myChart = new Chart(document.getElementById("myChart"), config);
 myChart.canvas.parentNode.style.height = '400px';
-myChart.canvas.parentNode.style.width = '1200px';
+myChart.canvas.parentNode.style.width = '1000px';
 
 window.setInterval(myCallback, 2000);
 
@@ -169,7 +169,7 @@ function myCallback() {
 	data.datasets[2].data.push(luminosity_value);
 	myChart.update();
 
-	// document.getElementById("currentValue").innerHTML = 'Current Temparature at ' + now + ' - ' + temperature_value;
+	document.getElementById("currentValue").innerHTML = now;
 	document.getElementById("current_temperature").innerHTML = temperature_value + '°C';
 	document.getElementById("current_humidity").innerHTML = humidity_value + '%';
 	document.getElementById("current_luminosity").innerHTML = luminosity_value + 'Lux';
