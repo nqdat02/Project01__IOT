@@ -93,12 +93,28 @@ const chart_colors = {
 	luminosity_color: '#ECEE4F',
 };
 
-const warning_color = {
-	high: '#cc3300',
-	moderate: '#ff9966',
-	low: '#ffcc00',
-	no: '#339900',
-};
+const warning_colors = [
+	{
+		high: '#cc3300',
+		moderate: '#ff9966',
+		low: '#ffcc00',
+		no: '#339900',
+	},
+	{
+		high: '#cc3300',
+		moderate: '#ff9966',
+		low: '#ffcc00',
+		no: '#339900',
+	},
+	{
+		high: '#cc3300',
+		moderate: '#ff9966',
+		low: '#ffcc00',
+		no: '#339900',
+	}
+];
+const allMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
 
 var data = {
 	labels: [0],
@@ -147,16 +163,15 @@ window.setInterval(myCallback, 2000);
 
 function myCallback() {
 	let now = new Date();
+	let date = allMonth[now.getMonth()] + " " + now.getDate() + " " + now.getFullYear();
 	let temperature_value = Math.floor(Math.random() * 100);
 	let humidity_value = Math.floor(Math.random() * 100);
 	let luminosity_value = Math.floor(Math.random() * 200);
-
 
 	now = ("0" + now.getHours()).slice(-2) + ":" + ("0" + now.getMinutes()).slice(-2) + ":" +  ("0" + now.getSeconds()).slice(-2);
 	// normal format
 	// now = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 	
-
 	if (data.labels.length > 15) {
 		data.labels.shift();
 		data.datasets[0].data.shift();
@@ -169,11 +184,34 @@ function myCallback() {
 	data.datasets[2].data.push(luminosity_value);
 	myChart.update();
 
-	document.getElementById("currentValue").innerHTML = now;
-	document.getElementById("current_temperature").innerHTML = temperature_value + '°C';
-	document.getElementById("current_humidity").innerHTML = humidity_value + '%';
-	document.getElementById("current_luminosity").innerHTML = luminosity_value + 'Lux';
+	document.getElementById("currentValue").innerHTML = "Now is: " + date;
+	// document.getElementById("current_temperature").innerHTML = temperature_value + '°C';
+	// document.getElementById("current_humidity").innerHTML = humidity_value + '%';
+	// document.getElementById("current_luminosity").innerHTML = luminosity_value + 'Lux';
 
+	setBackGrounrColor(0, 'current_temperature', temperature_value, '°C');
+	setBackGrounrColor(1, 'current_humidity', humidity_value, '%');
+	setBackGrounrColor(2, 'current_luminosity', luminosity_value, 'Lux');
+}
+
+function setBackGrounrColor(index, id, value, character) {
+	const allBaseItems = document.querySelectorAll('.base-item');
+	const thisElement = document.getElementById(id);
+	value = parseInt(value);
+	allBaseItems.forEach(element => {
+		if (element.contains(thisElement)){
+			if (value > 40) {
+				element.style.backgroundColor = warning_colors[index].high;
+			} else if (value > 25) {
+				element.style.backgroundColor = warning_colors[index].moderate;
+			} else if (value > 15) {
+				element.style.backgroundColor = warning_colors[index].low;
+			} else {
+				element.style.backgroundColor = warning_colors[index].no;
+			}
+		}
+	});
+	thisElement.innerHTML = value + character;
 }
 
 const btn_light = document.querySelector('#btn-light .switch input');
