@@ -93,24 +93,39 @@ const chart_colors = {
 	luminosity_color: '#ECEE4F',
 };
 
+// const warning_colors = [
+// 	{
+// 		high: '#cc3300',
+// 		moderate: '#ff9966',
+// 		low: '#ffcc00',
+// 		no: '#339900',
+// 	},
+// 	{
+// 		high: '#cc3300',
+// 		moderate: '#ff9966',
+// 		low: '#ffcc00',
+// 		no: '#339900',
+// 	},
+// 	{
+// 		high: '#cc3300',
+// 		moderate: '#ff9966',
+// 		low: '#ffcc00',
+// 		no: '#339900',
+// 	}
+// ];
+
 const warning_colors = [
 	{
-		high: '#cc3300',
-		moderate: '#ff9966',
-		low: '#ffcc00',
-		no: '#339900',
+		low: '#ff4d4d',
+		high: '#e3e9f0',
 	},
 	{
-		high: '#cc3300',
-		moderate: '#ff9966',
-		low: '#ffcc00',
-		no: '#339900',
+		low: '#66ccff',
+		high: '#e3e9f0',
 	},
 	{
-		high: '#cc3300',
-		moderate: '#ff9966',
-		low: '#ffcc00',
-		no: '#339900',
+		low: '#ffff80',
+		high: '#e3e9f0',
 	}
 ];
 const allMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -198,20 +213,33 @@ function setBackGrounrColor(index, id, value, character) {
 	const allBaseItems = document.querySelectorAll('.base-item');
 	const thisElement = document.getElementById(id);
 	value = parseInt(value);
+	thisElement.innerHTML = value + character;
+	
+	// allBaseItems.forEach(element => {
+	// 	if (element.contains(thisElement)){
+	// 		if (value > 40) {
+	// 			element.style.backgroundColor = warning_colors[index].high;
+	// 		} else if (value > 25) {
+	// 			element.style.backgroundColor = warning_colors[index].moderate;
+	// 		} else if (value > 15) {
+	// 			element.style.backgroundColor = warning_colors[index].low;
+	// 		} else {
+	// 			element.style.backgroundColor = warning_colors[index].no;
+	// 		}
+	// 	}
+	// });
 	allBaseItems.forEach(element => {
 		if (element.contains(thisElement)){
-			if (value > 40) {
-				element.style.backgroundColor = warning_colors[index].high;
-			} else if (value > 25) {
-				element.style.backgroundColor = warning_colors[index].moderate;
-			} else if (value > 15) {
-				element.style.backgroundColor = warning_colors[index].low;
-			} else {
-				element.style.backgroundColor = warning_colors[index].no;
+			let tmp_value = value;
+			if (value >= 100){
+				tmp_value /= 2;
 			}
+			let gradient = `linear-gradient(to top right, ${warning_colors[index].low} ${tmp_value}%, ${warning_colors[index].high} 100%)`;	
+			console.log(gradient);
+			console.log(typeof(gradient))
+			element.style.background = gradient;
 		}
 	});
-	thisElement.innerHTML = value + character;
 }
 
 const btn_light = document.querySelector('#btn-light .switch input');
