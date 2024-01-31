@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nguyen Quoc Dat - Personal Portfolio</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PGZH8HT');</script>
+    <!-- Materialize - Compiled and minified CSS-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+    <!-- Font Awesome Icon - CSS-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <!-- Custom Styles-->
     <link rel="stylesheet" href="assets/css/font.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <title>Profile</title>
+    <link rel="stylesheet" href="assets/css/profile.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-126939217-2');
+    </script>
 </head>
 <body>
     <header>
@@ -29,7 +56,407 @@
             </li>
         </ul>
     </header>
+    <nav class="hide-on-small-only">
+        <ul class="side-nav fixed section table-of-contents">
+            <li class="logo">
+                <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
+                    class="brand-logo grey-blue-text">
+                    <img src="assets/images/imgs/passport-new.jpg" class="circle img-responsive profile-pic" alt="avatar">
+                </a>
+            </li>
 
+            <li class="bold">
+                <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+                        class="mdi-social-person small"></i><span>About</span></a>
+            </li>
+
+            <li class="bold">
+                <a aria-label="Navigate to the Skills section" href="#skills"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-action-assessment small"></i><span>Skills</span></a>
+            </li>
+
+            <li class="bold">
+                <a aria-label="Navigate to the Education section" href="#education"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-social-school small"></i><span>Education</span></a>
+            </li>
+
+            <li class="bold">
+                <!-- 
+            1. mdi-communication-contacts
+            2. mdi-content-mail
+            3. mdi-communication-email
+            -->
+                <a aria-label="Navigate to the Contact section" href="#contact"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-content-mail small"></i><span>Contact</span></a>
+            </li>
+
+            <li class="bold">
+
+                <a aria-label="Open Dat's resume in a new tab"
+                    href="https://drive.google.com/file/d/1O7GkleS6SV6gJBybDeWomL6FG-vpH7Gt/view?usp=sharing"
+                    target="_blank" class="waves-effect waves-dark teal-text"><i
+                        class="mdi-file-folder-open small"></i><span>Resume</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Nav class 2 -->
+    <nav class="hide-on-large only trigger z-depth-1">
+        <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
+            class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <div class="name-title">
+            <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Nguyen Quoc
+                Dat</a><span class="black-text">Software Developer</span>
+        </div>
+    </nav>
+
+    <!-- Nav class 3 -->
+    <nav class="hide-on-large only">
+        <ul id="slide-out" class="side-nav">
+            <li class="bold">
+                <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
+                        class="mdi-social-person small"></i><span>About</span></a>
+            </li>
+            <li class="bold">
+                <a aria-label="Navigate to the Experience section" href="#experience"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-action-trending-up small"></i><span>Experience</span></a>
+            </li>
+            <li class="bold">
+                <a aria-label="Navigate to the Projects section" href="#projects"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-av-my-library-books small"></i><span>Projects</span></a>
+            </li>
+            <li class="bold">
+                <a aria-label="Navigate to the Skills section" href="#skills"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-action-assessment small"></i><span>Skills</span></a>
+            </li>
+
+            <li class="bold">
+                <a aria-label="Navigate to the Education section" href="#education"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-social-school small"></i><span>Education</span></a>
+            </li>
+            <li class="bold">
+                <a aria-label="Navigate to the Contact section" href="#contact"
+                    class="waves-effect waves-dark teal-text"><i
+                        class="mdi-content-mail small"></i><span>Contact</span></a>
+            </li>
+            <li class="bold">
+                <a aria-label="Open Dat's Resume in a new tab"
+                    href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing"
+                    target="_blank" class="waves-effect waves-dark teal-text"><i
+                        class="mdi-file-folder-open small"></i><span>Resume</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- First Section: Heading lines and image -->
+        <section id="intro" class="section scrollspy full-height">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="col-md-9">
+                    <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+                        <div class="caption">
+                            <h2>Hi, I'm <span class="teal">Nguyen Quoc Dat</span></h2>
+                            <h5 style="color:#fff">A <span class="typing"
+                                    style="font-weight: 300; color:#004d40"></span></h5>
+                            <h4>I'm a student at PTIT, Viet Nam</h6>
+                                <!-- <h5 style="color:#00796b">A <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
+                                <h5>"Every great developer you know got there by solving problems they were unqualified
+                                    to solve until they actually did it." - Patrick McKenzie</h5>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/nqdat2002/" target="_blank">
+                                <button class="icon-btn linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </button>
+                            </a>
+                            <a href="https://github.com/nqdat2002/" target="_blank">
+                                <button class="icon-btn github">
+                                    <i class="fa fa-github"></i>
+                                </button>
+                            </a>
+
+                            <a href="https://facebook.com/datnq2002/" target="_blank">
+                                <button class="icon-btn github">
+                                    <i class="fa fa-facebook"></i>
+                                </button>
+                            </a>
+
+                            <a href="https://twitter.com/NguynQu13430452" target="_blank">
+                                <button class="icon-btn github">
+                                    <i class="fa fa-twitter"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class='buttons'>
+                            <a href="#about" class="readme">Read More</a>
+                            <a href="#contact" class="contactme">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Section: About -->
+        <section id="about" class="section scrollspy">
+            <h3 class="page-title white-text teal">About</h3>
+            <div class="container flow-text">
+                <p>
+                    I am a student at Posts and Telecommunications Institute of Technology. I enjoy problem-solving and
+                    I always strive to bring 100% to the work I do.
+                    I have worked on technologies like C++, Java, Python, MySQL, MongoDB, HTML5, CSS, JavaScript
+                    during my bachelor's. I have 2 years of professional work experience which helped me
+                    strengthen my experience in C++ Programming.
+
+                    I am passionate about developing complex applications that solve real-world problems impacting
+                    millions of users.
+                </p>
+                <p>
+                <ul>
+                    <li><b>Languages:</b> Python, Java, C, C++, C#, HTML/CSS, JavaScript, TypeScript</li>
+                    <li><b>Databases:</b> MySQL, MongoDB</li>
+                    <li><b>Libraries:</b> OpenGL, OpenCV, NumPy, Pandas, React</li>
+                    <li><b>Frameworks:</b> Node.js, Keras, TensorFlow, PyTorch, Bootstrap
+                    </li>
+                    <li><b>Tools & Technologies:</b> Git, AWS, GCP</li>
+                </ul>
+
+                </p>
+                <p>
+                    Looking for an opportunity to work in a challenging position combining my skills in Software
+                    Engineering, which provides professional development, interesting experiences and personal growth.
+                </p>
+            </div>
+        </section>
+        <!-- Third Section: Experience -->
+        <!-- Fourth Section: Projects -->
+        <!-- Fifth Section: Skills -->
+        <section id="skills" class="section scrollspy">
+            <h3 class="page-title white-text teal">Skills</h3>
+            <div class="container">
+                <!-- Languages and Databases -->
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="brown-text light">Languages and Databases</h4>
+                        <div class="row text-center">
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/Cpp-logo-300x300.png" class="responsive-img" />C/C++
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/java-logo-300x300.png" class="responsive-img" />Java
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/python-logo-1-300x300.jpg" class="responsive-img" />Python
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/javascpipt-logo-300x300.png" class="responsive-img" />JavaScript
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/Typescript-logo-300x300.png" class="responsive-img" />TypeScript
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="brown-text light">Libraries</h4>
+                        <div class="row text-center">
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/opengl-logo.png" class="responsive-img" />OpenCV
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
+                            </div>
+
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/sk-learn-logo-1-500x500.jpg"
+                                    class="responsive-img" />scikit-learn
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/matplotlib-logo-1-500x500.jpg"
+                                    class="responsive-img" />matplotlib
+                            </div>
+
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/React.webp" class="responsive-img" />React
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="brown-text light">Frameworks</h4>
+                        <div class="row text-center">
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/nodejs.png" class="responsive-img" />NodeJs
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/bootstrap.png" class="responsive-img" />Bootstrap
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/keras-logo.png" class="responsive-img" />Keras
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/tensorflow-logo-1.png" class="responsive-img" />TensorFlow
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/pytorch-logo.png" class="responsive-img" />PyTorch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other -->
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="brown-text light">Other</h4>
+                        <div class="row text-center">
+
+
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/git.png" class="responsive-img" />Git
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/aws.png" class="responsive-img" />AWS
+                            </div>
+                            <div class="col s4 m2">
+                                <img alt="" src="assets/images/imgs/GCP-logo.png" class="responsive-img" />GCP
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- Seventh Section: Education -->
+        <section id="education" class="section scrollspy">
+            <h3 class="page-title white-text teal">Education</h3>
+            <div class="container">
+                <div class="row">
+
+                </div>
+                <div class="col s12 m6 l6">
+                    <div class="card">
+                        <div class="card-content">
+                            <p>
+                                <span class="card-title"><a href="https://portal.ptit.edu.vn/" target="_blank"
+                                        class="teal-text hoverline">Posts and Telecommunications Institute of
+                                        Technology</a></span>
+                            </p>
+                            <p class="brown-text">Ha Noi, Viet Nam</p>
+                            <p>
+                                <b>Degree: </b>Engineer of MultiMedia & Technology
+                                <br>
+                                <b>CGPA: </b>3.08/4.00
+                            </p>
+
+                            <ul>
+                                <p>
+                                    <b>Relevant Courseworks:</b>
+                                <ul>
+                                    <li>Data Structures and Algorithms</li>
+                                    <li>Database Management Systems</li>
+                                    <li>Operating Systems</li>
+                                    <li>Machine Learning</li>
+                                    <li>Computer Vision</li>
+                                    <li>Web Developments</li>
+                                </ul>
+                                </p>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Eight Section: Contact -->
+        <section id="contact" class="section scrollspy full-height">
+            <h3 class="page-title white-text teal">Contact</h3>
+            <div class="container">
+                <p>
+                    <a aria-label="Call Dat" data-position="top" data-tooltip="Call Dat" href="tel: 0948669343"
+                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                            class="fa fa-phone"></i><a aria-label="Call Dat" href="tel: 0948669343">+84948669343</a></a>
+                </p>
+                <p>
+                    <a aria-label="Email Dat" href="mailto:ngquocdat.work@gmail.com" target="_blank" data-position="top"
+                        data-tooltip="Email Dat"
+                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                            class="fa fa-envelope"></i><a aria-label="Email Dat" href="mailto:ngquocdat.work@gmail.com"
+                            class="hoverline">ngquocdat.work@gmail.com</a></a>
+                </p>
+                <p>
+                    <a aria-label="View Dat on GitHub" href="http://github.com/nqdat2002" target="_blank"
+                        data-position="top" data-tooltip="View Dat on GitHub"
+                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                            class="fa fa-github"></i><a aria-label="Dat on Github" href="http://github.com/nqdat2002"
+                            class="hoverline" target="_blank">github.com/nqdat2002</a></a>
+                </p>
+                <p>
+                    <a aria-label="View Dat on LinkedIn" href="http://linkedin.com/in/nqdat2002" target="_blank"
+                        data-position="top" data-tooltip="View Dat on LinkedIn"
+                        class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                            class="fa fa-linkedin"></i><a aria-label="Dat on LinkedIn"
+                            href="https://www.linkedin.com/in/nqdat2002/" class="hoverline"
+                            target="_blank">linkedin.com/in/nqdat2002/</a></a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- nav bar active js -->
     <script src="assets/js/navbarActive.js"></script>
+
+    <!-- typed.js -->
+    <script src="assets/js/vendor/typed.js/typed.min.js"></script>
+    <script type="text/javascript">
+        var typed = new Typed('.typing', {
+            strings: ["Partner of Competitive Programming", "Applications Developer", "Fast Learner"],
+            loop: true,
+            typeSpeed: 20,
+            backSpeed: 40
+        });
+    </script>
+
+    <!-- jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Materialize - Compiled and minified JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <script>
+        // Materialize - Initializers
+        $(document).ready(function () {
+            $(".scrollspy").scrollSpy()
+            // Initialize collapse button
+            $(".button-collapse").sideNav({
+                menuWidth: 190, // Default is 240
+                edge: "left", // Choose the horizontal origin
+                closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            })
+        })
+    </script>
 </body>
 </html>
