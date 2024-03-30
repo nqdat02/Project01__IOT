@@ -35,22 +35,50 @@ The Internet of Things (IoT) refers to the network of interconnected devices, se
    Design and create a MySQL database schema to store data related to your IoT application (e.g., device information, sensor readings, user data).
    Use SQL queries to perform database operations such as inserting, updating, deleting, and querying data.
    Establish a connection to the MySQL database from your Express.js backend using a MySQL client library (e.g., mysql2).
-   Connect:
-```
-    const connection = mysql.createConnection({
+   ## Connect:
+   ```
+   const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: 'datnq123',
         database: 'iot_app'
-    });
-```
-4. MQTT Broker
-   
-   Set up an MQTT broker (e.g., Mosquitto, RabbitMQ) to facilitate communication between IoT devices and your backend.
+   });
+   ```
+   ## Create Table:
+   ```
+   create table datasensor{
+       id int auto_increment primary key,
+       temperature float,
+       humidity float,
+       luminosity float,
+       created_at timestamp default current_timestamp
+   };
+   ```
+   ## Query:
+   ```
+   try {
+        const sql = "SELECT id, temperature, humidity, luminosity, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') AS dateCreated FROM datasensors";
+        // console.log(sql);
 
-   <a href="https://mosquitto.org/download/" target="_blank">Install MQTT</a>
-    
-   <a href="https://mqtt-explorer.com/" target="_blank">MQTT Explorer</a>
+        connection.query(sql, async (err, result, fields) => {
+            if (err) {
+                console.log("Error getting records: ", err);
+                return res.status(500).json(err);
+            }
+            return res.status(200).send({data: result, message: 'success'});
+        });
+    } catch (error) {
+        console.error("Error in getAllDataSensor: ", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+   ```
+5. MQTT Broker
+   
+   <a href="https://mosquitto.org/download/" target="_blank">Install MQTT</a> an MQTT broker (e.g., Mosquitto, RabbitMQ) to facilitate communication between IoT devices and your backend.
+
+   <a href="https://mqtt-explorer.com/" target="_blank">MQTT Explorer</a> if you need to test connection of MQTT
+   
+   <a href="https://www.youtube.com/watch?v=hyJhKWhxAxA" target="_blank">Tutorial</a> Set up & Config MQTT
 
    Configure topics and subscriptions to route MQTT messages to the appropriate endpoints in your Express.js backend.
    
@@ -59,7 +87,55 @@ The Internet of Things (IoT) refers to the network of interconnected devices, se
    Implement MQTT client functionality in your IoT devices to publish sensor data or subscribe to control commands.
    
    <a href="https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-sensor-arduino-ide/" target="_blank">Read Data From DHT</a>
-   
-   <a href="https://www.youtube.com/watch?v=hyJhKWhxAxA" target="_blank">Tutorial</a>
 
-6. API Docs
+   ## MQTT with NodeJs
+   Import the MQTT.js client library
+
+   ```
+   const mqtt = require('mqtt')
+   ```
+   To establish the MQTT connection, it is necessary to set the connection address, port, and client ID. In this example, we utilize the built-in function that generates random numbers in JavaScript to generate    the client ID.
+   ```
+   const protocol = 'mqtt'
+   const host = 'broker.emqx.io'
+   const port = '1883'
+   const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+   
+   const connectUrl = `${protocol}://${host}:${port}`
+   ```
+   
+   Next, we establish the connection using the URL constructed by splicing the host and port. To achieve this, we call the built-in connect function of the MQTT module, and once the connection is established,      it returns a Client instance.
+   ```
+   const client = mqtt.connect(connectUrl, {
+        clientId,
+        clean: true,
+        connectTimeout: 4000,
+        username: 'emqx',
+        password: 'public',
+        reconnectPeriod: 1000,
+   });
+      
+   client.on('connect', () => {
+     console.log('Connected')
+   });
+   ```
+
+   Publish & Subcribe Topic
+   ```
+   client.on('connect', () => {
+     console.log('Connected')
+   
+     client.subscribe([topic], () => {
+       console.log(`Subscribe to topic '${topic}'`)
+       client.publish(topic, 'nodejs mqtt test', { qos: 0, retain: false }, (error) => {
+         if (error) {
+           console.error(error)
+         }
+       })
+     })
+   });
+   ```
+
+   You can learn more at <a href="https://www.emqx.com/en/blog/how-to-use-mqtt-in-nodejs" target="_blank">here</a>!
+   
+7. API Docs
