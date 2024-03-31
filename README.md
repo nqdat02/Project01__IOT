@@ -44,9 +44,27 @@ The Internet of Things (IoT) refers to the network of interconnected devices, se
 
 ## 2. Backend
    Implement RESTful APIs using Express.js to handle client requests from the React.js frontend.
+   ### start:
    ```
-      import express from "express";
+      npm install express
+   ```
+   ```
+      const express = require('express'); 
+      const app = express(); 
+      app.get('/', function (req, res) {
+         res.send('Hello World');
+      })
+      
+      app.get('/', (req, res) => {   
+          res.send('Hello World!') 
+      });
 
+      const port = 3000;  
+
+      app.listen(port, () => {   
+          console.log(`Example app listening on port ${port}!`) 
+      });
+   
    ```
    Define routes for CRUD operations (Create, Read, Update, Delete) to interact with the MySQL database.
    Set up routes for MQTT messages to communicate with IoT devices via the MQTT broker.
